@@ -51,6 +51,7 @@ img {
     object-fit: cover;
 }    
 
+/* thumbnails */
 .thumbnails {
     position: relative;
 }
