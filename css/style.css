@@ -27,15 +27,16 @@ img {
 }    
 
 .slider {
+    display: flex;
+    max-width: 800px;
     width: 60%;
-    position: relative;
     /* debug */
-    background-color: aqua;
+    background-color: lightcoral;
 }    
 
 .slider-items {
     height: 40vh;
-    width: 100%;
+    width: 550px;
 }    
 
 .item {
@@ -43,11 +44,38 @@ img {
     display: none;
 }    
 
-.item img {
+.item img,
+.thumb-item img {
     margin: 0 auto;
     height: 100%;
     object-fit: cover;
 }    
+
+.thumbnails {
+    position: relative;
+}
+
+.thumbnails-image {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.thumb-item {
+    align-self: stretch;
+    display: block;
+    height: 8vh;
+    filter: opacity(.6);
+    object-fit: cover;
+}
+
+.thumbnails img {
+    width: 100%;
+}
+
+.thumb-item.active {
+    filter: opacity(1);
+    border: 2px solid white;
+}
+ 
 /* slider button settings and layout */
 .next-up,
 .prev-down {
@@ -65,14 +93,16 @@ img {
     top: 8px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 999;
 }    
 .prev-down {
     bottom: 8px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 999;
 }    
 .next-up:hover, 
 .prev-down:hover {
     cursor: pointer;
-    filter: opacity(.7);
+    filter: opacity(.8);
 }    
