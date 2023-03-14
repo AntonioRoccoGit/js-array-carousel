@@ -25,32 +25,35 @@ sliderItemsArray[itemCounter].classList.add("active");
 
 //impostiamo il bottone next
 nextUp.addEventListener("click", function(){
-    //rimuovo classe precedente
-    sliderItemsArray[itemCounter].classList.remove("active");
-    //aumento il contantore
-    itemCounter++;
-    //aggiungo la classe  al nuovo item
-    sliderItemsArray[itemCounter].classList.add("active");
     if (itemCounter === sliderItemsArray.length - 1){
         sliderItemsArray[itemCounter].classList.remove("active");
-        itemCounter = 0;
+        itemCounter = 0; 
         sliderItemsArray[itemCounter].classList.add("active");
+    }else {
 
-    };
+        //rimuovo classe precedente
+        sliderItemsArray[itemCounter].classList.remove("active");
+        //aumento il contantore
+        itemCounter++;
+        //aggiungo la classe  al nuovo item
+        sliderItemsArray[itemCounter].classList.add("active");
+    }
 });
 
 //imposto il bottone prev
 prevDown.addEventListener("click", function(){
     //rimuovo classe precedente
-    sliderItemsArray[itemCounter].classList.remove("active");
-    //aumento il contantore
-    itemCounter--;
-    //aggiungo la classe  al nuovo item
-    sliderItemsArray[itemCounter].classList.add("active");
     if (itemCounter === 0){
         sliderItemsArray[itemCounter].classList.remove("active");
         itemCounter = sliderItemsArray.length - 1;
         sliderItemsArray[itemCounter].classList.add("active");
 
+    }else {
+
+        sliderItemsArray[itemCounter].classList.remove("active");
+        //aumento il contantore
+        itemCounter--;
+        //aggiungo la classe  al nuovo item
+        sliderItemsArray[itemCounter].classList.add("active");
     };
 });
