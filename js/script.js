@@ -33,19 +33,26 @@ for (let i = 0; i < userImages.length; i++) {
 
 
 //setto stato iniziale ultimo bonus
-const thumbNailsItemsArrey = document.querySelectorAll(".thumb-item")
+const thumbNailsItemsArrey = document.querySelectorAll(".thumb-item");
 console.log(thumbNailsItemsArrey);
 //setto lo stato iniziale dove appare almeno la prima immagine
 const sliderItemsArray = document.querySelectorAll(".item");
+
 let itemCounter = 0;
+
 sliderItemsArray[itemCounter].classList.add("active");
 thumbNailsItemsArrey[itemCounter].classList.add("active");
+
+
 //impostiamo il bottone next
 nextUp.addEventListener("click", function(){
     if (itemCounter === sliderItemsArray.length - 1){
+
         sliderItemsArray[itemCounter].classList.remove("active");
         thumbNailsItemsArrey[itemCounter].classList.remove("active");
+
         itemCounter = 0; 
+
         sliderItemsArray[itemCounter].classList.add("active");
         thumbNailsItemsArrey[itemCounter].classList.add("active");
     }else {
@@ -53,8 +60,10 @@ nextUp.addEventListener("click", function(){
         //rimuovo classe precedente
         sliderItemsArray[itemCounter].classList.remove("active");
         thumbNailsItemsArrey[itemCounter].classList.remove("active");
+
         //aumento il contantore
         itemCounter++;
+
         //aggiungo la classe  al nuovo item
         sliderItemsArray[itemCounter].classList.add("active");
         thumbNailsItemsArrey[itemCounter].classList.add("active");
@@ -65,9 +74,12 @@ nextUp.addEventListener("click", function(){
 prevDown.addEventListener("click", function(){
     //rimuovo classe precedente
     if (itemCounter === 0){
+
         sliderItemsArray[itemCounter].classList.remove("active");
         thumbNailsItemsArrey[itemCounter].classList.remove("active");
+
         itemCounter = sliderItemsArray.length - 1;
+
         sliderItemsArray[itemCounter].classList.add("active");
         thumbNailsItemsArrey[itemCounter].classList.add("active");
 
@@ -75,8 +87,10 @@ prevDown.addEventListener("click", function(){
 
         sliderItemsArray[itemCounter].classList.remove("active");
         thumbNailsItemsArrey[itemCounter].classList.remove("active");
+        
         //aumento il contantore
         itemCounter--;
+
         //aggiungo la classe  al nuovo item
         sliderItemsArray[itemCounter].classList.add("active");
         thumbNailsItemsArrey[itemCounter].classList.add("active");
